@@ -1,5 +1,12 @@
+import { HomeContent, SearchInput } from '../components/Home';
+
 const Home = () => {
-  return <>ddddd</>;
+  return (
+    <div className='bg-[#CFDFFF] w-full'>
+      <SearchInput />
+      <HomeContent />
+    </div>
+  );
 };
 
 export default Home;
