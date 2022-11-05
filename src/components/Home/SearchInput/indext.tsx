@@ -1,12 +1,12 @@
-import { Input, Space } from 'antd';
+import { Input } from 'antd';
 
 const { Search } = Input;
 
 const SearchInput = () => {
   return (
-    <Space direction='vertical'>
-      <Search placeholder='input search text' enterButton />
-    </Space>
+    <div className='px-8 pt-4'>
+      <Search placeholder='input search text' size='large' enterButton />
+    </div>
   );
 };
 

@@ -2,10 +2,12 @@ import { HomeContent, SearchInput } from '../components/Home';
 
 const Home = () => {
   return (
-    <div className='bg-[#CFDFFF] w-full'>
-      <SearchInput />
-      <HomeContent />
-    </div>
+    <section className='bg-[#9CC7FF] w-full h-screen'>
+      <div className='max-w-page-full m-auto'>
+        <SearchInput />
+        <HomeContent />
+      </div>
+    </section>
   );
 };
 

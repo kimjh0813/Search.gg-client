@@ -1,5 +1,5 @@
 const HomeContent = () => {
-  return <div className='bg-black w-24'>dd</div>;
+  return <div className='bg-white mt-8 h-80'>dd</div>;
 };
 
 export default HomeContent;
