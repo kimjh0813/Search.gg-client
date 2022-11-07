@@ -4,7 +4,7 @@ const Menu = () => {
   return (
     <div className="flex justify-between max-w-page-full mx-auto">
       <div>
-        <a href="#">홈</a>
+        <a href="/">홈</a>
         <a href="#" className="ml-4">
           my
         </a>
@@ -13,10 +13,10 @@ const Menu = () => {
         </a>
       </div>
       <div>
-        <a href="#" className="ml-4">
+        <a href="/login" className="ml-4">
           로그인
         </a>
-        <a href="#" className="ml-4">
+        <a href="/signup" className="ml-4">
           회원가입
         </a>
       </div>
