@@ -1,47 +1,44 @@
 import { Button, Form, Input } from 'antd';
+import { useState } from 'react';
 
-const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
-};
+interface SignUpInfo {
+  name: string;
+  id: string;
+  password: string;
+}
 
-const validateMessages = {
-  required: '${label} is required!',
-  types: {
-    email: '${label} is not a valid email!',
-    number: '${label} is not a valid number!',
-  },
-  number: {
-    range: '${label} must be between ${min} and ${max}',
-  },
-};
+const SignUp = () => {
+  const [SignUpInfo, setSignUpInfo] = useState<SignUpInfo>({
+    name: '',
+    id: '',
+    password: '',
+  });
 
-const Signup = () => {
+  const handleValueChange = ({ target: { value, name } }: any) => {
+    setSignUpInfo((prev) => ({ ...prev, [name]: value }));
+  };
+
+  function Submit() {
+    console.log(SignUpInfo);
+  }
+
   return (
     <div className="w-full h-screen bg-[#f3f5f7]">
       <div className="max-w-[600px] m-auto pt-20 ">
-        <Form {...layout} name="nest-messages" validateMessages={validateMessages}>
-          <Form.Item name={['user', 'Id']} label="Id">
-            <Input />
-          </Form.Item>
-          <Form.Item name={['user', 'Password']} label="Password">
-            <Input.Password />
-          </Form.Item>
-          <Form.Item name={['user', 'name']} label="Name">
-            <Input />
-          </Form.Item>
-          <Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email' }]}>
-            <Input />
-          </Form.Item>
-          <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-            <Button type="primary" htmlType="submit">
-              Signup
-            </Button>
-          </Form.Item>
-        </Form>
+        <div>Id</div>
+        <Input name="id" type="text" onChange={handleValueChange} className="mb-8" />
+        <div>Password</div>
+        <Input.Password name="password" onChange={handleValueChange} className="mb-8" />
+        <div>Name</div>
+        <Input name="name" type="text" onChange={handleValueChange} className="mb-8" />
+        <div>Email</div>
+        <Input name="email" type="email" onChange={handleValueChange} className="mb-8" />
+        <Button type="primary" onClick={Submit}>
+          SignUp
+        </Button>
       </div>
     </div>
   );
 };
 
-export default Signup;
+export default SignUp;
