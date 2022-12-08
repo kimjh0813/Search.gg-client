@@ -1,22 +1,22 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Menu from '../components/Home/Menu';
+
+import { Menu } from '../components';
 import Login from '../pages/login';
 import Home from '../pages';
 import Search from '../pages/search';
 
 const Layout = () => {
   return (
-    <>
+    <BrowserRouter>
       <Menu />
-      <BrowserRouter>
-        <Routes>
-          <Route>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </>
+      <Routes>
+        <Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/login" element={<Login />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 
