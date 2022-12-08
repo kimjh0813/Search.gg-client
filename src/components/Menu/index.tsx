@@ -5,9 +5,7 @@ const Menu = () => {
     <div className="flex justify-between max-w-page-full mx-auto py-4">
       <div>
         <Link to="/">홈</Link>
-        <Link to="#" className="ml-4">
-          my
-        </Link>
+        <Link to="#" className="ml-4"></Link>
         <Link to="#" className="ml-4">
           커뮤니티
         </Link>
