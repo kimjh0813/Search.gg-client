@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Menu from '../components/Home/Menu';
+
+import { Menu } from '../components';
 import Login from '../pages/login';
 import Home from '../pages';
-import Search from '../pages/search';
 import Signup from '../pages/Signup';
 
 const Layout = () => {
   return (
-    <>
+    <BrowserRouter>
       <Menu />
       <BrowserRouter>
         <Routes>
@@ -18,7 +18,7 @@ const Layout = () => {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </BrowserRouter>
   );
 };
 

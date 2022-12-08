@@ -13,11 +13,11 @@ const Login = () => {
         >
           <div>Id</div>
           <Input />
-          <div>password</div>
+          <div className="my-2">password</div>
           <Input.Password />
           <Checkbox>Remember Id</Checkbox>
           <Button type="primary" htmlType="submit">
-            Login
+            Submit
           </Button>
         </Form>
       </div>

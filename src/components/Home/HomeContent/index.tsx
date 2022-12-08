@@ -1,16 +1,5 @@
-import HomeList from './HomeList';
-
 const HomeContent = () => {
-  return (
-    <div className="w-full flex mt-8 h-[364px]">
-      <div className="w-full h-full bg-white">
-        <HomeList />
-      </div>
-      {/* <div className='w-[50%] h-full bg-white'>
-        <HomeList />
-      </div> */}
-    </div>
-  );
+  return <div className="bg-white mt-16 h-80 rounded-lg">dd</div>;
 };
 
 export default HomeContent;
