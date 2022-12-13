@@ -1,7 +1,5 @@
-import { Input } from 'antd';
-import { ChangeEventHandler, useState } from 'react';
 import { Link } from 'react-router-dom';
-import LogoImage from '../../images/Home/logo.png';
+import LogoImage from '../../assets/images/Home/logo.png';
 
 interface LogoProps {
   width: string;

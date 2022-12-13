@@ -9,7 +9,6 @@ const Layout = () => {
   return (
     <BrowserRouter>
       <Menu />
-      <BrowserRouter>
         <Routes>
           <Route>
             <Route path="/" element={<Home />}></Route>
@@ -17,7 +16,6 @@ const Layout = () => {
             <Route path="/signup" element={<Signup />}></Route>
           </Route>
         </Routes>
-      </BrowserRouter>
     </BrowserRouter>
   );
 };
