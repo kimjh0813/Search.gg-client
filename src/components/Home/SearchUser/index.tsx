@@ -22,10 +22,10 @@ const SearchUser = () => {
     console.log(version, userInfo);
   }, [version, userInfo]);
 
-  const onSearch = (value: string) => {
-    navigate(`/search`, { state: { userName: value } });
-    getGameVersion().then((data) => SetVersion(data[0]));
-    getUserInfo(value).then((data) => setUserInfo(data));
+  const onSearch = async (value: string) => {
+    const version = await getGameVersion().then((data) => SetVersion(data[0]));
+    const list = await getUserInfo(value).then((data) => setUserInfo(data));
+    console.log(list, version);
   };
 
   return (

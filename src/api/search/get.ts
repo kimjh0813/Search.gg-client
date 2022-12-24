@@ -2,7 +2,7 @@ const apiKey = process.env.REACT_APP_RIOT_API_KEY;
 
 const getGameVersion = async () => {
   const versionUrl = 'https://ddragon.leagueoflegends.com/api/versions.json';
-
+  console.log(apiKey);
   return await fetch(versionUrl)
     .then((response) => response.json())
     .catch((error) => console.log(error));
