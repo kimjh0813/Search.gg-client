@@ -1,12 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { Layout } from 'antd';
-
-import { Menu } from '../components';
 import Login from './login';
-import Home from '.';
+import Home from './home';
 import Signup from './Signup';
-import { Content, Header } from 'antd/lib/layout/layout';
+import Menu from 'components/Menu';
 
 const Router = () => {
   return (
