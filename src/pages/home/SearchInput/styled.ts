@@ -1,7 +1,13 @@
 import { Input } from 'antd';
 import styled from 'styled-components';
 
-const RoundSearch = styled(Input.Search)`
+const InputContainer = styled.div`
+  max-width: 600px;
+  border-radius: 8px;
+  margin: 0 auto;
+`;
+
+const SearchInput = styled(Input.Search)`
   .ant-input {
     border-radius: 15px;
     height: 50px;
@@ -15,4 +21,4 @@ const RoundSearch = styled(Input.Search)`
   }
 `;
 
-export { RoundSearch };
+export { SearchInput, InputContainer };

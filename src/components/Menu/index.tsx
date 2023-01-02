@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 
+import * as S from './styled';
+
 const Menu = () => {
   return (
-    <div className="flex justify-between max-w-page-full mx-auto py-4">
+    <S.MenuContainer>
       <div>
         <Link to="/">홈</Link>
         <Link to="#" className="ml-4"></Link>
@@ -18,7 +20,7 @@ const Menu = () => {
           회원가입
         </Link>
       </div>
-    </div>
+    </S.MenuContainer>
   );
 };
 export default Menu;

@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom';
-import LogoImage from '../../assets/images/Home/logo.png';
+import LogoImage from 'assets/images/logo.png';
 
-interface LogoProps {
-  width: string;
-  className?: string;
-}
+import type * as T from './type';
 
-const Logo = ({ width, className }: LogoProps) => {
+const Logo = ({ width, className }: T.LogoProps) => {
   return (
     <Link to="/">
       <img src={LogoImage} className={`max-w-[${width}] ${className}`} />

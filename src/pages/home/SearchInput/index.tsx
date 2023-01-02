@@ -1,22 +1,15 @@
-import { getGameVersion, getUserInfo } from 'api/search/get';
+import { getGameVersion, getUserInfo } from 'api/search';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { RoundSearch } from './styled';
 
-interface userInfo {
-  accountId: string;
-  id: string;
-  name: string;
-  profileIconId: number;
-  puuid: string;
-  revisionDate: number;
-  summonerLevel: number;
-}
+import * as S from './styled';
 
-const SearchUser = () => {
+import type * as T from './type';
+
+const SearchInput = () => {
   const navigate = useNavigate();
   const [version, SetVersion] = useState<string>('');
-  const [userInfo, setUserInfo] = useState<userInfo>();
+  const [userInfo, setUserInfo] = useState<T.UserInfo>();
 
   useEffect(() => {
     console.log(version, userInfo);
@@ -29,10 +22,10 @@ const SearchUser = () => {
   };
 
   return (
-    <div className="px-64 rounded-lg">
-      <RoundSearch placeholder="소환사명 검색" enterButton=". GG" onSearch={onSearch} />
-    </div>
+    <S.InputContainer>
+      <S.SearchInput placeholder="소환사명 검색" enterButton=". GG" onSearch={onSearch} />
+    </S.InputContainer>
   );
 };
 
-export default SearchUser;
+export default SearchInput;

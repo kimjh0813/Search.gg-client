@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import HomeListItem from './HomeListItem';
+import HomeListItem from './HomeList/HomeListItem';
 
+//content
 const HomeList = () => {
   return (
     <div className="h-full">

@@ -97,31 +97,29 @@ const HomeListItem = () => {
     <div className="h-80">
       <div className="h-full grid grid-cols-2">
         <div className="h-full">
-          {CommunityItems.filter((CommunityItem, index) => index < 5).map(
-            (CommunityItem, index) => (
-              <div
-                className="h-1/5 border-0 border-b-2 border-solid border-gray-200"
-                key={CommunityItem.id}
-              >
-                <Link
-                  className="flex flex-row m-y-1 justify-center items-center h-full "
-                  to="/community/"
-                >
-                  <div className="basis-1/12  text-center ">{index + 1}</div>
-                  <div className="basis-2/12 text-center">{CommunityItem.img}</div>
-                  <div className="basis-9/12">
-                    <div>
-                      <label className="inline-block">{CommunityItem.title}</label>
-                      <div className="inline-block">[{CommunityItem.recommandCount}]</div>
+          {CommunityItems.map(
+            ({ img, title, recommandCount, period, name }, index) =>
+              index < 5 && (
+                <div className="h-1/5 border-0 border-b-2 border-solid border-gray-200">
+                  <Link
+                    className="flex flex-row m-y-1 justify-center items-center h-full "
+                    to="/community/"
+                  >
+                    <div className="basis-1/12  text-center ">{index + 1}</div>
+                    <div className="basis-2/12 text-center">{img}</div>
+                    <div className="basis-9/12">
+                      <div>
+                        <label className="inline-block">{title}</label>
+                        <div className="inline-block">[{recommandCount}]</div>
+                      </div>
+                      <div>
+                        <div className="inline-block">{period}</div>
+                        <div className="inline-block">{name}</div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="inline-block">{CommunityItem.period}</div>
-                      <div className="inline-block">{CommunityItem.name}</div>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            )
+                  </Link>
+                </div>
+              )
           )}
         </div>
         <div className="border-0 border-l-2 border-solid border-gray-200">
