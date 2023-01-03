@@ -11,9 +11,9 @@ const Search = () => {
 
   return (
     <div className="max-w-page-full m-auto">
-      <div>대맘구역</div>
-      <div>대빠구역</div>
-      <div>대맘구역</div>
+      <div>a</div>
+      <div>b</div>
+      <div>c</div>
     </div>
   );
 };

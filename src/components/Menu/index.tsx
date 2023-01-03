@@ -1,8 +1,13 @@
+import { Button } from 'antd';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { openModal } from 'reduce/modals';
 
 import * as S from './styled';
 
 const Menu = () => {
+  const dispatch = useDispatch();
+
   return (
     <S.MenuContainer>
       <div>
@@ -13,9 +18,14 @@ const Menu = () => {
         </Link>
       </div>
       <div>
-        <Link to="/login" className="ml-4">
+        <Button
+          className="ml-4"
+          onClick={() => {
+            dispatch(openModal({ name: 'login' }));
+          }}
+        >
           로그인
-        </Link>
+        </Button>
         <Link to="#" className="ml-4">
           회원가입
         </Link>

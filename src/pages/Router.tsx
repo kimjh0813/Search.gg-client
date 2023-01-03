@@ -6,6 +6,7 @@ import Signup from 'pages/Signup';
 import Search from 'pages/search';
 
 import Menu from 'components/Menu';
+import ModalManager from 'components/ModalManager';
 
 const Router = () => {
   return (
@@ -19,6 +20,7 @@ const Router = () => {
           <Route path="/signup" element={<Signup />}></Route>
         </Route>
       </Routes>
+      <ModalManager />
     </BrowserRouter>
   );
 };
