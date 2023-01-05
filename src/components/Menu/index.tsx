@@ -19,16 +19,23 @@ const Menu = () => {
       </div>
       <div>
         <Button
+          type="primary"
           className="ml-4"
           onClick={() => {
-            dispatch(openModal({ name: 'login' }));
+            dispatch(openModal({ name: 'LoginModal' }));
           }}
         >
           로그인
         </Button>
-        <Link to="#" className="ml-4">
+        <Button
+          type="primary"
+          className="ml-4"
+          onClick={() => {
+            dispatch(openModal({ name: 'SignUpModal' }));
+          }}
+        >
           회원가입
-        </Link>
+        </Button>
       </div>
     </S.MenuContainer>
   );

@@ -1,1 +1,1 @@
-export type ModalNames = 'login';
+export type ModalNames = 'LoginModal' | 'SignUpModal';

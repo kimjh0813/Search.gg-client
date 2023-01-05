@@ -2,7 +2,9 @@ import { Button, Checkbox, Input, Modal } from 'antd';
 import Logo from 'components/Logo';
 import { ChangeEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { closeModal } from 'reduce/modals';
+import { closeModal, openModal } from 'reduce/modals';
+
+import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
 
 import * as S from './styled';
 import type * as T from './type';
@@ -16,7 +18,7 @@ const LoginModal = () => {
     status: false,
   });
 
-  const close = () => dispatch(closeModal('login'));
+  const close = () => dispatch(closeModal('LoginModal'));
 
   const changLoginInfo = ({ target: { id, value } }: ChangeEvent<HTMLInputElement>) => {
     setLoginInfo((prev) => ({ ...prev, [id]: value }));
@@ -27,7 +29,14 @@ const LoginModal = () => {
   };
 
   return (
-    <S.LoginModal open={true} footer={false} width={400} title={'로그인'} onCancel={close}>
+    <S.LoginModal
+      open={true}
+      footer={false}
+      width={400}
+      title={'로그인'}
+      onCancel={close}
+      style={{ top: 190 }}
+    >
       <S.LoginContainer>
         <S.ItemBox className="mt-4">
           <Input
@@ -36,6 +45,7 @@ const LoginModal = () => {
             id="id"
             value={loginInfo.id}
             onChange={changLoginInfo}
+            prefix={<UserOutlined />}
           />
         </S.ItemBox>
         <S.ItemBox>
@@ -45,6 +55,7 @@ const LoginModal = () => {
             id="password"
             value={loginInfo.password}
             onChange={changLoginInfo}
+            prefix={<LockOutlined />}
           />
         </S.ItemBox>
         <S.ItemBox>
@@ -56,11 +67,18 @@ const LoginModal = () => {
           />
           <label className="ml-2">로그인 상태 유지</label>
         </S.ItemBox>
-        <S.ItemBox>
+        <S.ItemBox style={{ marginTop: 30 }}>
           <Button type="primary" onClick={login}>
             로그인
           </Button>
-          <Button>회원가입</Button>
+          <Button
+            onClick={() => {
+              close();
+              dispatch(openModal({ name: 'SignUpModal' }));
+            }}
+          >
+            회원가입
+          </Button>
         </S.ItemBox>
       </S.LoginContainer>
     </S.LoginModal>

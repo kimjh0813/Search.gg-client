@@ -1,4 +1,5 @@
 import LoginModal from 'components/Modal/LoginModal';
+import SignUpModal from 'components/Modal/SignUpModal';
 import { Fragment, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from 'reduce';
@@ -13,8 +14,11 @@ function ModalManager() {
           <Fragment key={name}>
             {(() => {
               switch (name) {
-                case 'login': {
-                  return <LoginModal {...props} />;
+                case 'LoginModal': {
+                  return <LoginModal />;
+                }
+                case 'SignUpModal': {
+                  return <SignUpModal />;
                 }
                 default: {
                   return <></>;

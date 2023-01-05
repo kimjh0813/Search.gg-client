@@ -1,7 +1,7 @@
 import { Modal } from 'antd';
 import styled from 'styled-components';
 
-const LoginModal = styled(Modal)`
+const SignUpModal = styled(Modal)`
   .ant-modal-content {
     border-radius: 5px;
     .ant-modal-header {
@@ -17,22 +17,27 @@ const LoginModal = styled(Modal)`
   }
 `;
 
-const LoginContainer = styled.div`
+const SignUpContainer = styled.div`
   padding: 0 20px;
-  label {
+  p {
     color: #444;
   }
 `;
 
 const ItemBox = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   .ant-btn {
     width: 100%;
     margin-bottom: 8px;
+    height: 35px;
   }
   .ant-input-prefix {
     margin-right: 10px;
   }
+  p {
+    margin: 5px 0 0 5px;
+    color: #e52528;
+  }
 `;
 
-export { LoginModal, LoginContainer, ItemBox };
+export { SignUpModal, SignUpContainer, ItemBox };
