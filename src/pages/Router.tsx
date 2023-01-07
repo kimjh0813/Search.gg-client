@@ -13,7 +13,7 @@ const Router = () => {
       <Routes>
         <Route>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/search" element={<Search />}></Route>
+          <Route path="/search/:name" element={<Search />}></Route>
         </Route>
       </Routes>
       <ModalManager />
