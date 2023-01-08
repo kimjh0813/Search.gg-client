@@ -1,20 +1,30 @@
 import { Button } from 'antd';
-import { getGameVersion, getUserInfo } from 'api/search';
+import { getGameVersion, getUserInfo, getUserTier } from 'api/search';
 import { useEffect, useState } from 'react';
 
 import type * as T from './type';
 import * as S from './styled';
 import TierImage from 'components/TierImage';
+import { data } from 'autoprefixer';
 
 const UserProfile = () => {
   const [userInfo, setUserInfo] = useState<T.UserInfo>();
   const [version, setVersion] = useState<string>();
 
   useEffect(() => {
-    const userName = window.location.pathname.replaceAll('/search/', '');
-    getUserInfo(userName).then((result) => setUserInfo(result));
-    getGameVersion().then((data) => setVersion(data[0]));
+    getInfo();
   }, []);
+
+  useEffect(() => {
+    if (!userInfo?.id) return;
+    getUserTier(userInfo?.id).then((reuslt) => console.log(reuslt));
+  }, [userInfo?.id]);
+
+  const getInfo = async () => {
+    const userName = window.location.pathname.replaceAll('/search/', '');
+    await getUserInfo(userName).then((result) => setUserInfo(result));
+    await getGameVersion().then((data) => setVersion(data[0]));
+  };
 
   return (
     <S.Container>

@@ -15,4 +15,12 @@ const getUserInfo = async (userName: string) => {
     .catch((error) => console.log(error));
 };
 
-export { getGameVersion, getUserInfo };
+const getUserTier = async (encryptedSummonerId: string) => {
+  const url = `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${encryptedSummonerId}?api_key=${apiKey}`;
+
+  return await fetch(url)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+};
+
+export { getGameVersion, getUserInfo, getUserTier };
