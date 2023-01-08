@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  height: 200px;
+  background-color: #ddd;
+  border-radius: 10px;
+`;
+
 const ProfileImage = styled.div`
   position: relative;
   margin-top: 24px;
@@ -25,4 +33,11 @@ const ProfileImage = styled.div`
   }
 `;
 
-export { ProfileImage };
+const NameBox = styled.div`
+  margin: 24px 0 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+`;
+
+export { ProfileImage, Container, NameBox };

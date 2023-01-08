@@ -27,15 +27,6 @@ const Menu = () => {
         >
           로그인
         </Button>
-        <Button
-          type="primary"
-          className="ml-4"
-          onClick={() => {
-            dispatch(openModal({ name: 'SignUpModal' }));
-          }}
-        >
-          회원가입
-        </Button>
       </div>
     </S.MenuContainer>
   );

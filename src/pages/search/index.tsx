@@ -1,6 +1,3 @@
-import { Button } from 'antd';
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import UserProfile from './UserProfile';
 
 const Search = () => {
