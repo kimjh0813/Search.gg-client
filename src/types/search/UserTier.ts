@@ -1,13 +1,3 @@
-interface UserInfo {
-  accountId: string;
-  id: string;
-  name: string;
-  profileIconId: number;
-  puuid: string;
-  revisionDate: number;
-  summonerLevel: number;
-}
-
 interface UserTier {
   freshBlood: boolean;
   hotStreak: boolean;
@@ -24,4 +14,4 @@ interface UserTier {
   wins: number;
 }
 
-export type { UserInfo, UserTier };
+export type { UserTier };

@@ -4,19 +4,23 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   height: 200px;
-  background-color: #ddd;
+  background-color: #eee;
+  border: 1px solid #ddd;
   border-radius: 10px;
+`;
+
+const Box = styled.div`
+  display: flex;
+  margin: 24px 32px;
 `;
 
 const ProfileImage = styled.div`
   position: relative;
-  margin-top: 24px;
-  margin-left: 32px;
   img {
     display: flex;
     border-radius: 15px;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 
   label {
@@ -28,16 +32,16 @@ const ProfileImage = styled.div`
     border-radius: 10px;
     background-color: #444;
     color: white;
-    top: 90px;
-    left: 30px;
+    top: 110px;
+    left: 40px;
   }
 `;
 
 const NameBox = styled.div`
-  margin: 24px 0 0 30px;
+  margin-left: 30px;
   font-size: 16px;
   font-weight: 500;
   color: #444;
 `;
 
-export { ProfileImage, Container, NameBox };
+export { ProfileImage, Container, NameBox, Box };
