@@ -14,4 +14,8 @@ interface UserTier {
   wins: number;
 }
 
-export type { UserTier };
+interface UserTierInfo {
+  UsertierInfo: UserTier[];
+}
+
+export type { UserTier, UserTierInfo };

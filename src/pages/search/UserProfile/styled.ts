@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   width: 100%;
+  justify-content: space-between;
   height: 200px;
   background-color: #eee;
   border: 1px solid #ddd;
@@ -23,7 +24,7 @@ const ProfileImage = styled.div`
     height: 120px;
   }
 
-  label {
+  span {
     position: absolute;
     width: 40px;
     text-align: center;

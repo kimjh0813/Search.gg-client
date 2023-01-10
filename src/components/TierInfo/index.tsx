@@ -11,11 +11,12 @@ import UnrankedImage from 'assets/images/unranked.png';
 
 import * as S from './styled';
 import type * as T from './type';
-import { UserTier } from 'types/search/UserTier';
+import { UserTier, UserTierInfo } from 'types/search/UserTier';
 
-const TierImage = ({ value }: { value: UserTier }) => {
-  const { tier } = value;
-  const Tier = () => {
+const TierImage = ({ props }: { props: UserTier[] }) => {
+  const UserInfo: UserTier[] = props;
+
+  const Tier = ({ tier }: { tier: string }) => {
     switch (tier) {
       case 'CHALLENGER':
         return <img src={ChallengerImage}></img>;
@@ -41,9 +42,32 @@ const TierImage = ({ value }: { value: UserTier }) => {
   };
 
   return (
-    <S.Container>
-      <Tier />
-    </S.Container>
+    <>
+      {UserInfo.map((v) => {
+        return (
+          <S.Container>
+            <S.TierInfoWrapper>
+              <S.TierInfoBox>
+                <Tier tier={v.tier} />
+                <S.TierTextBox>
+                  <p>
+                    {v.tier} {v.rank}
+                  </p>
+                  <p>{v.leaguePoints} LP</p>
+                </S.TierTextBox>
+              </S.TierInfoBox>
+              <S.WInLossBox>
+                <p className="text-[15px]">
+                  {v.wins}
+                  <span style={{ color: 'blue' }}> Win</span> {v.losses}{' '}
+                  <span style={{ color: 'red' }}>loss</span>
+                </p>
+              </S.WInLossBox>
+            </S.TierInfoWrapper>
+          </S.Container>
+        );
+      })}
+    </>
   );
 };
 
