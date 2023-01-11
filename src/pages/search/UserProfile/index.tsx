@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import type * as T from './type';
 import * as S from './styled';
-import TierImage from 'components/TierInfo';
+import TierInfo from 'components/TierInfo';
 import { UserTier, UserTierInfo } from 'types/search/UserTier';
 
 const UserProfile = () => {
@@ -20,7 +20,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     if (!userInfo?.id) return;
-    getUserTier(userInfo?.id).then((reuslt) => setUserTier(reuslt));
+    getUserTier(userInfo?.id).then((result) => setUserTier(result));
   }, [userInfo?.id]);
 
   return (
@@ -29,7 +29,6 @@ const UserProfile = () => {
         <S.ProfileImage>
           <img
             src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${userInfo?.profileIconId}.png`}
-            className=""
           />
           <span>{userInfo?.summonerLevel}</span>
         </S.ProfileImage>
@@ -40,7 +39,9 @@ const UserProfile = () => {
           </Button>
         </div>
       </S.Box>
-      <S.Box>{userTier?.length && <TierImage props={userTier} />}</S.Box>
+      <S.Box>
+        <TierInfo userInfo={userTier} />
+      </S.Box>
     </S.Container>
   );
 };

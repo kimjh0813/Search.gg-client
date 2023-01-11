@@ -15,7 +15,7 @@ interface UserTier {
 }
 
 interface UserTierInfo {
-  UsertierInfo: UserTier[];
+  UserTierInfo: UserTier[];
 }
 
 export type { UserTier, UserTierInfo };

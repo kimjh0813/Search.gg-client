@@ -1,5 +1,5 @@
-interface TierImageProps {
+interface TierInfoProps {
   tier: string;
 }
 
-export type { TierImageProps };
+export type { TierInfoProps };

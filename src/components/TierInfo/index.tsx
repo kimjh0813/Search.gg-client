@@ -7,15 +7,15 @@ import GoldImage from 'assets/images/gold.png';
 import SilverImage from 'assets/images/silver.png';
 import BronzeImage from 'assets/images/bronze.png';
 import IronImage from 'assets/images/iron.png';
-import UnrankedImage from 'assets/images/unranked.png';
+import UnRankedImage from 'assets/images/unRanked.png';
 
 import * as S from './styled';
 import type * as T from './type';
-import { UserTier, UserTierInfo } from 'types/search/UserTier';
+import { UserTier } from 'types/search/UserTier';
+import { useMemo } from 'react';
+import NoTierData from './NoTierData';
 
-const TierImage = ({ props }: { props: UserTier[] }) => {
-  const UserInfo: UserTier[] = props;
-
+const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
   const Tier = ({ tier }: { tier: string }) => {
     switch (tier) {
       case 'CHALLENGER':
@@ -37,38 +37,43 @@ const TierImage = ({ props }: { props: UserTier[] }) => {
       case 'IRON':
         return <img src={IronImage}></img>;
       default:
-        return <img src={UnrankedImage}></img>;
+        return <img src={UnRankedImage}></img>;
     }
   };
 
   return (
     <>
-      {UserInfo.map((v) => {
-        return (
-          <S.Container>
-            <S.TierInfoWrapper>
-              <S.TierInfoBox>
-                <Tier tier={v.tier} />
-                <S.TierTextBox>
+      {userInfo &&
+        userInfo.map((v, index) => {
+          return (
+            <S.Container key={index}>
+              <S.TierInfoWrapper>
+                <S.TierTitle>
+                  {v.queueType === 'RANKED_SOLO_5x5' ? '솔로랭크' : '자유랭크'}
+                </S.TierTitle>
+                <S.TierInfoBox>
+                  <Tier tier={v.tier} />
+                  <S.TierTextBox>
+                    <p>
+                      {v.tier} {v.rank}
+                    </p>
+                    <p>{v.leaguePoints} LP</p>
+                  </S.TierTextBox>
+                </S.TierInfoBox>
+                <S.WInLossBox>
                   <p>
-                    {v.tier} {v.rank}
+                    {v.wins}
+                    <span style={{ color: '#5393CA', marginRight: 8 }}> 승</span> {v.losses}
+                    <span style={{ color: '#ED6767' }}> 패</span>
                   </p>
-                  <p>{v.leaguePoints} LP</p>
-                </S.TierTextBox>
-              </S.TierInfoBox>
-              <S.WInLossBox>
-                <p className="text-[15px]">
-                  {v.wins}
-                  <span style={{ color: 'blue' }}> Win</span> {v.losses}{' '}
-                  <span style={{ color: 'red' }}>loss</span>
-                </p>
-              </S.WInLossBox>
-            </S.TierInfoWrapper>
-          </S.Container>
-        );
-      })}
+                </S.WInLossBox>
+              </S.TierInfoWrapper>
+            </S.Container>
+          );
+        })}
+      <NoTierData />
     </>
   );
 };
 
-export default TierImage;
+export default TierInfo;
