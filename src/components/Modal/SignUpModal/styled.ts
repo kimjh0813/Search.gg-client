@@ -19,7 +19,7 @@ const SignUpModal = styled(Modal)`
 
 const SignUpContainer = styled.div`
   padding: 0 20px;
-  p {
+  > p {
     color: #444;
   }
 `;
@@ -34,7 +34,7 @@ const ItemBox = styled.div`
   .ant-input-prefix {
     margin-right: 10px;
   }
-  p {
+  > p {
     margin: 5px 0 0 5px;
     color: #e52528;
   }

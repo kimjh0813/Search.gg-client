@@ -2,36 +2,44 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
-  margin-right: 10px;
 `;
 
 const TierInfoWrapper = styled.div`
+  display: inline;
   width: 100%;
-  margin: 0 32px;
-  p {
+  /* margin-right: 32px; */
+  > p {
     font-weight: 500;
   }
 `;
 
+const TierTitle = styled.div`
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+`;
+
 const TierInfoBox = styled.div`
   display: flex;
-  img {
+  > img {
     width: 105px;
     height: auto;
-    margin-right: 16px;
+    margin: 0 7px;
   }
 `;
 
 const TierTextBox = styled.div`
-  margin: 20px 0 0 15px;
-  p {
-    width: 115px;
+  margin: 20px 0 0 9px;
+  > p {
+    width: 110px;
+    font-weight: 600;
   }
 `;
 
 const WInLossBox = styled.div`
   text-align: center;
-  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
 `;
 
-export { Container, TierInfoWrapper, TierInfoBox, TierTextBox, WInLossBox };
+export { Container, TierInfoWrapper, TierInfoBox, TierTextBox, WInLossBox, TierTitle };

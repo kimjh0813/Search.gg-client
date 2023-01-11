@@ -4,7 +4,7 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
-  height: 200px;
+  height: 230px;
   background-color: #eee;
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -17,14 +17,14 @@ const Box = styled.div`
 
 const ProfileImage = styled.div`
   position: relative;
-  img {
+  > img {
     display: flex;
     border-radius: 15px;
     width: 120px;
     height: 120px;
   }
 
-  span {
+  > span {
     position: absolute;
     width: 40px;
     text-align: center;
