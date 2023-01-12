@@ -22,16 +22,17 @@ const TierTitle = styled.div`
 const TierInfoBox = styled.div`
   display: flex;
   > img {
-    width: 105px;
-    height: auto;
-    margin: 0 7px;
+    width: auto;
+    height: 110px;
+    margin: 5px 12px;
   }
 `;
 
 const TierTextBox = styled.div`
   margin: 20px 0 0 9px;
-  > p {
+  .tier_info {
     width: 110px;
+    margin-bottom: 15px;
     font-weight: 600;
   }
 `;
@@ -40,6 +41,7 @@ const WInLossBox = styled.div`
   text-align: center;
   font-size: 15px;
   font-weight: 600;
+  line-height: 19px;
 `;
 
 export { Container, TierInfoWrapper, TierInfoBox, TierTextBox, WInLossBox, TierTitle };

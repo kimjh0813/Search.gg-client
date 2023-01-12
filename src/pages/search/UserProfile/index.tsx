@@ -24,7 +24,7 @@ const UserProfile = () => {
   }, [userInfo?.id]);
 
   return (
-    <S.Container>
+    <S.Container className="flex-col mlg:flex-row mlg:justify-between ">
       <S.Box>
         <S.ProfileImage>
           <img

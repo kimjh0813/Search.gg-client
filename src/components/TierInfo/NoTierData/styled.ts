@@ -21,6 +21,7 @@ const TierTitle = styled.div`
 
 const TierInfoBox = styled.div`
   display: flex;
+  line-height: 19px;
   img {
     width: auto;
     height: 120px;

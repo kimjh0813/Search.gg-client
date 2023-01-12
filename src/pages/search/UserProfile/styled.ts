@@ -3,8 +3,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   width: 100%;
-  justify-content: space-between;
-  height: 230px;
+  height: auto;
   background-color: #eee;
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -12,7 +11,7 @@ const Container = styled.div`
 
 const Box = styled.div`
   display: flex;
-  margin: 24px 32px;
+  margin: 20px 32px 20px;
 `;
 
 const ProfileImage = styled.div`

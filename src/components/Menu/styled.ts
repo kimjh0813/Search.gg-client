@@ -5,7 +5,7 @@ const MenuContainer = styled.div`
   justify-content: space-between;
   max-width: 1080px;
   margin: 0 auto;
-  padding: 24px 0;
+  padding: 20px 16px;
 `;
 
 export { MenuContainer };

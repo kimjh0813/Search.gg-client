@@ -3,8 +3,12 @@ import LogoImage from 'assets/images/logo.png';
 
 import type * as T from './type';
 
-const Logo = ({ width, className }: T.LogoProps) => {
-  return <img src={LogoImage} className={`max-w-[${width}] ${className}`} />;
+const Logo = ({ className }: T.LogoProps) => {
+  return (
+    <div className={`w-full flex`}>
+      <img src={LogoImage} className={`${className}`} />
+    </div>
+  );
 };
 
 export default Logo;

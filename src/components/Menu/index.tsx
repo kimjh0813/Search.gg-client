@@ -10,10 +10,12 @@ const Menu = () => {
 
   return (
     <S.MenuContainer>
-      <div>
-        <Link to="/">홈</Link>
-        <Link to="#" className="ml-4"></Link>
-        <Link to="#" className="ml-4">
+      <div className="flex">
+        <Link to="/" className="flex items-center justify-items-center">
+          홈
+        </Link>
+
+        <Link to="#" className="flex ml-4 items-center justify-items-center">
           커뮤니티
         </Link>
       </div>

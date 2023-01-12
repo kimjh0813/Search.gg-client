@@ -10,9 +10,7 @@ import IronImage from 'assets/images/iron.png';
 import UnRankedImage from 'assets/images/unRanked.png';
 
 import * as S from './styled';
-import type * as T from './type';
 import { UserTier } from 'types/search/UserTier';
-import { useMemo } from 'react';
 import NoTierData from './NoTierData';
 
 const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
@@ -42,37 +40,38 @@ const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
   };
 
   return (
-    <>
+    <div className="flex flex-col xsm:flex-row">
       {userInfo &&
         userInfo.map((v, index) => {
           return (
             <S.Container key={index}>
               <S.TierInfoWrapper>
                 <S.TierTitle>
-                  {v.queueType === 'RANKED_SOLO_5x5' ? '솔로랭크' : '자유랭크'}
+                  {v.queueType === 'RANKED_SOLO_5x5' ? '솔로랭크 5x5' : '자유랭크 5x5'}
                 </S.TierTitle>
                 <S.TierInfoBox>
                   <Tier tier={v.tier} />
                   <S.TierTextBox>
-                    <p>
+                    <div className="tier_info">
                       {v.tier} {v.rank}
-                    </p>
-                    <p>{v.leaguePoints} LP</p>
+                    </div>
+                    <div className="tier_info">{v.leaguePoints} LP</div>
                   </S.TierTextBox>
                 </S.TierInfoBox>
                 <S.WInLossBox>
-                  <p>
+                  <div>
                     {v.wins}
                     <span style={{ color: '#5393CA', marginRight: 8 }}> 승</span> {v.losses}
                     <span style={{ color: '#ED6767' }}> 패</span>
-                  </p>
+                  </div>
+                  <div>승률: {((v.wins / (v.wins + v.losses)) * 100).toFixed(1)}%</div>
                 </S.WInLossBox>
               </S.TierInfoWrapper>
             </S.Container>
           );
         })}
       <NoTierData />
-    </>
+    </div>
   );
 };
 

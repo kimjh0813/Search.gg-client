@@ -1,6 +1,5 @@
 interface LogoProps {
-  width: string;
-  className?: string;
+  className: string;
 }
 
 export type { LogoProps };
