@@ -23,4 +23,22 @@ const getUserTier = async (encryptedSummonerId: string) => {
     .catch((error) => console.log(error));
 };
 
+interface GameRecordProps {
+  puuid: string;
+  startTime?: number;
+  endTime?: number;
+  queue?: number;
+  type?: 'ranked' | 'normal' | 'tourney' | 'tutorial';
+  start?: number;
+  count?: number;
+}
+
+const getUserGameRecord = async ({ puuid }: GameRecordProps) => {
+  const url = `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=20&api_key=${apiKey}`;
+
+  return await fetch(url)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+};
+
 export { getGameVersion, getUserInfo, getUserTier };
