@@ -24,4 +24,4 @@ interface UserTier {
   wins: number;
 }
 
-export type { UserInfo, UserTier };
+export type { UserTier, UserInfo };
