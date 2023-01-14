@@ -2,11 +2,15 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
+  background-color: #f9f9f9;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  min-width: 235px;
+  overflow: hidden;
 `;
 
 const TierInfoWrapper = styled.div`
-  display: inline;
-  width: 100%;
   /* margin-right: 32px; */
   > p {
     font-weight: 500;
@@ -21,17 +25,20 @@ const TierTitle = styled.div`
 
 const TierInfoBox = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   > img {
-    width: auto;
-    height: 110px;
+    max-width: 95px;
+    width: 100%;
     margin: 5px 12px;
   }
 `;
 
 const TierTextBox = styled.div`
   margin: 20px 0 0 9px;
+
   .tier_info {
-    width: 110px;
+    word-break: break-all;
     margin-bottom: 15px;
     font-weight: 600;
   }

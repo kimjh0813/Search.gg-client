@@ -7,20 +7,19 @@ const Container = styled.div`
   background-color: #eee;
   border: 1px solid #ddd;
   border-radius: 10px;
+  overflow: hidden;
 `;
 
 const Box = styled.div`
   display: flex;
-  margin: 20px 32px 20px;
 `;
 
-const ProfileImage = styled.div`
+const ProfileBox = styled.div`
   position: relative;
   > img {
-    display: flex;
+    /* display: flex; */
     border-radius: 15px;
     width: 120px;
-    height: 120px;
   }
 
   > span {
@@ -37,6 +36,11 @@ const ProfileImage = styled.div`
   }
 `;
 
+const InfoBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const NameBox = styled.div`
   margin-left: 30px;
   font-size: 16px;
@@ -44,4 +48,4 @@ const NameBox = styled.div`
   color: #444;
 `;
 
-export { ProfileImage, Container, NameBox, Box };
+export { ProfileBox, Container, NameBox, Box, InfoBox };

@@ -40,21 +40,19 @@ const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
   };
 
   return (
-    <div className="flex flex-col xsm:flex-row">
+    <div className="flex flex-col justify-between w-full xsm:flex-row">
       {userInfo &&
         userInfo.map((v, index) => {
           return (
-            <S.Container key={index}>
-              <S.TierInfoWrapper>
+            <S.Container key={index} className="w-full xsm:w-1/2 xsm:mx-2">
+              <S.TierInfoWrapper className="w-full mlg:w-[250px]">
                 <S.TierTitle>
                   {v.queueType === 'RANKED_SOLO_5x5' ? '솔로랭크 5x5' : '자유랭크 5x5'}
                 </S.TierTitle>
                 <S.TierInfoBox>
                   <Tier tier={v.tier} />
                   <S.TierTextBox>
-                    <div className="tier_info">
-                      {v.tier} {v.rank}
-                    </div>
+                    <div className="tier_info">{v.tier + ' ' + v.rank}</div>
                     <div className="tier_info">{v.leaguePoints} LP</div>
                   </S.TierTextBox>
                 </S.TierInfoBox>
