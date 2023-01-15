@@ -1,13 +1,12 @@
 import { Button } from 'antd';
 import { getGameVersion, getUserInfo, getUserTier } from 'api/search';
 import { useEffect, useState } from 'react';
-
-import type * as T from './type';
-import * as S from './styled';
 import TierInfo from 'components/TierInfo';
-import { UserTier, UserTierInfo } from 'types/search/UserTier';
 
-const UserProfile = ({ userInfo }: { userInfo: T.UserInfo | undefined }) => {
+import type { UserInfo, UserTier } from 'types/search/UserTier';
+import * as S from './styled';
+
+const UserProfile = ({ userInfo }: { userInfo: UserInfo | undefined }) => {
   const [version, setVersion] = useState<string>();
   const [userTier, setUserTier] = useState<UserTier[]>();
 

@@ -14,8 +14,14 @@ interface UserTier {
   wins: number;
 }
 
-interface UserTierInfo {
-  UserTierInfo: UserTier[];
+interface UserInfo {
+  accountId: string;
+  id: string;
+  name: string;
+  profileIconId: number;
+  puuid: string;
+  revisionDate: number;
+  summonerLevel: number;
 }
 
-export type { UserTier, UserTierInfo };
+export type { UserTier, UserInfo };
