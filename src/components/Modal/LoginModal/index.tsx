@@ -1,10 +1,10 @@
 import { Button, Checkbox, Input, Modal } from 'antd';
-import Logo from 'components/Logo';
+
 import { ChangeEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { closeModal, openModal } from 'reduce/modals';
 
-import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 
 import * as S from './styled';
 import type * as T from './type';
@@ -21,7 +21,7 @@ const LoginModal = () => {
   const close = () => dispatch(closeModal('LoginModal'));
 
   const changLoginInfo = ({ target: { id, value } }: ChangeEvent<HTMLInputElement>) => {
-    setLoginInfo((prev) => ({ ...prev, [id]: value }));
+    setLoginInfo(prev => ({ ...prev, [id]: value }));
   };
 
   const login = () => {
@@ -35,14 +35,13 @@ const LoginModal = () => {
       width={400}
       title={'로그인'}
       onCancel={close}
-      style={{ top: 190 }}
-    >
+      style={{ top: 190 }}>
       <S.LoginContainer>
-        <S.ItemBox className="mt-4">
+        <S.ItemBox className='mt-4'>
           <Input
-            size="large"
-            placeholder="아이디"
-            id="id"
+            size='large'
+            placeholder='아이디'
+            id='id'
             value={loginInfo.id}
             onChange={changLoginInfo}
             prefix={<UserOutlined />}
@@ -50,9 +49,9 @@ const LoginModal = () => {
         </S.ItemBox>
         <S.ItemBox>
           <Input.Password
-            size="large"
-            placeholder="비밀번호"
-            id="password"
+            size='large'
+            placeholder='비밀번호'
+            id='password'
             value={loginInfo.password}
             onChange={changLoginInfo}
             prefix={<LockOutlined />}
@@ -60,23 +59,22 @@ const LoginModal = () => {
         </S.ItemBox>
         <S.ItemBox>
           <Checkbox
-            id="status"
+            id='status'
             onChange={({ target }) => {
-              setLoginInfo((prev) => ({ ...prev, status: target.checked }));
+              setLoginInfo(prev => ({ ...prev, status: target.checked }));
             }}
           />
-          <label className="ml-2">로그인 상태 유지</label>
+          <label className='ml-2'>로그인 상태 유지</label>
         </S.ItemBox>
         <S.ItemBox style={{ marginTop: 30 }}>
-          <Button type="primary" onClick={login}>
+          <Button type='primary' onClick={login}>
             로그인
           </Button>
           <Button
             onClick={() => {
               close();
               dispatch(openModal({ name: 'SignUpModal' }));
-            }}
-          >
+            }}>
             회원가입
           </Button>
         </S.ItemBox>

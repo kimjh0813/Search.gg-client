@@ -10,23 +10,22 @@ const Menu = () => {
 
   return (
     <S.MenuContainer>
-      <div className="flex">
-        <Link to="/" className="flex items-center justify-items-center">
+      <div className='flex'>
+        <Link to='/' className='flex items-center justify-items-center'>
           홈
         </Link>
 
-        <Link to="#" className="flex ml-4 items-center justify-items-center">
+        <Link to='#' className='flex ml-4 items-center justify-items-center'>
           커뮤니티
         </Link>
       </div>
       <div>
         <Button
-          type="primary"
-          className="ml-4"
+          type='primary'
+          className='ml-4'
           onClick={() => {
             dispatch(openModal({ name: 'LoginModal' }));
-          }}
-        >
+          }}>
           로그인
         </Button>
       </div>

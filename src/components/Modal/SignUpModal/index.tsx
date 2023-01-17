@@ -26,7 +26,7 @@ const SignUpModal = () => {
   const close = () => dispatch(closeModal('SignUpModal'));
 
   const changLoginInfo = ({ target: { id, value } }: ChangeEvent<HTMLInputElement>) => {
-    setSignUpInfo((prev) => ({ ...prev, [id]: value }));
+    setSignUpInfo(prev => ({ ...prev, [id]: value }));
   };
 
   const checkPassword = () => {
@@ -56,15 +56,14 @@ const SignUpModal = () => {
       width={400}
       title={'회원가입'}
       onCancel={close}
-      style={{ top: 190 }}
-    >
+      style={{ top: 190 }}>
       <S.SignUpContainer>
         <p>회원정보를 입력해주세요.</p>
-        <S.ItemBox className="mt-4">
+        <S.ItemBox className='mt-4'>
           <Input
-            size="large"
-            placeholder="아이디"
-            id="id"
+            size='large'
+            placeholder='아이디'
+            id='id'
             value={signUpInfo.id}
             onChange={changLoginInfo}
             prefix={<UserOutlined />}
@@ -72,9 +71,9 @@ const SignUpModal = () => {
         </S.ItemBox>
         <S.ItemBox>
           <Input.Password
-            size="large"
-            placeholder="비밀번호"
-            id="password"
+            size='large'
+            placeholder='비밀번호'
+            id='password'
             value={signUpInfo.password}
             onChange={changLoginInfo}
             onBlur={checkPassword}
@@ -83,9 +82,9 @@ const SignUpModal = () => {
         </S.ItemBox>
         <S.ItemBox>
           <Input.Password
-            size="large"
-            placeholder="비밀번호 확인"
-            id="passwordCheck"
+            size='large'
+            placeholder='비밀번호 확인'
+            id='passwordCheck'
             value={signUpInfo.passwordCheck}
             onChange={changLoginInfo}
             onBlur={checkPassword}
@@ -100,16 +99,16 @@ const SignUpModal = () => {
         </S.ItemBox>
         <S.ItemBox>
           <Input
-            size="large"
-            placeholder="닉네임"
-            id="name"
+            size='large'
+            placeholder='닉네임'
+            id='name'
             value={signUpInfo.name}
             onChange={changLoginInfo}
             prefix={<SmileOutlined />}
           />
         </S.ItemBox>
         <S.ItemBox style={{ marginTop: 30 }}>
-          <Button type="primary" onClick={signUp}>
+          <Button type='primary' onClick={signUp}>
             가입하기
           </Button>
         </S.ItemBox>
