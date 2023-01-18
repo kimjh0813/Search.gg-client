@@ -1,4 +1,5 @@
 import { Modal } from 'antd';
+
 import styled from 'styled-components';
 
 const SignUpModal = styled(Modal)`

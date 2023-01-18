@@ -1,5 +1,6 @@
-import { getUserGameRecord } from 'api/search';
 import { useEffect } from 'react';
+
+import { getUserGameRecord } from 'api/search';
 import type { UserInfo } from 'types/search/UserTier';
 
 const UserGameRecord = ({ userInfo }: { userInfo: UserInfo | undefined }) => {

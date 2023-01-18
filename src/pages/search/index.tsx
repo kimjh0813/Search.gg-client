@@ -1,9 +1,10 @@
-import { getUserGameRecord, getUserInfo } from 'api/search';
 import { useEffect, useState } from 'react';
-import UserProfile from './UserProfile';
 
+import { getUserGameRecord, getUserInfo } from 'api/search';
 import type { UserInfo } from 'types/search/UserTier';
+
 import UserGameRecord from './UserGameRecord';
+import UserProfile from './UserProfile';
 
 const Search = () => {
   const [userInfo, setUserInfo] = useState<UserInfo>();

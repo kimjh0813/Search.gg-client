@@ -1,7 +1,7 @@
 import Logo from 'components/Logo';
+
 import HomeContent from './HomeContent';
 import SearchUser from './SearchInput';
-
 import * as S from './styled';
 
 const Home = () => {

@@ -1,5 +1,4 @@
 import update from 'immutability-helper';
-
 import type { ModalNames } from 'types/modlaNames';
 
 const OPEN_MODAL = 'modal/OPEN_MODAL' as const;
@@ -33,7 +32,7 @@ const initialState: ModalState = {
 export const modals = (state: ModalState = initialState, action: ModalAction): ModalState => {
   switch (action.type) {
     case OPEN_MODAL: {
-      const isModal = state.openedModals.findIndex((v) => v.name === action.payload.name) > -1;
+      const isModal = state.openedModals.findIndex(v => v.name === action.payload.name) > -1;
 
       return {
         ...state,
@@ -41,7 +40,7 @@ export const modals = (state: ModalState = initialState, action: ModalAction): M
       };
     }
     case CLOSE_MODAL: {
-      const findIndex = state.openedModals.findIndex((v) => v.name === action.payload);
+      const findIndex = state.openedModals.findIndex(v => v.name === action.payload);
 
       return update(state, {
         openedModals: {

@@ -1,6 +1,7 @@
+import { Fragment, Suspense } from 'react';
+
 import LoginModal from 'components/Modal/LoginModal';
 import SignUpModal from 'components/Modal/SignUpModal';
-import { Fragment, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from 'reduce';
 

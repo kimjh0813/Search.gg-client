@@ -1,17 +1,17 @@
-import ChallengerImage from 'assets/images/challenger.png';
-import GrandMasterImage from 'assets/images/grandMaster.png';
-import MasterImage from 'assets/images/master.png';
-import DiamondImage from 'assets/images/diamond.png';
-import PlatinumImage from 'assets/images/platinum.png';
-import GoldImage from 'assets/images/gold.png';
-import SilverImage from 'assets/images/silver.png';
 import BronzeImage from 'assets/images/bronze.png';
+import ChallengerImage from 'assets/images/challenger.png';
+import DiamondImage from 'assets/images/diamond.png';
+import GoldImage from 'assets/images/gold.png';
+import GrandMasterImage from 'assets/images/grandMaster.png';
 import IronImage from 'assets/images/iron.png';
+import MasterImage from 'assets/images/master.png';
+import PlatinumImage from 'assets/images/platinum.png';
+import SilverImage from 'assets/images/silver.png';
 import UnRankedImage from 'assets/images/unRanked.png';
-
-import * as S from './styled';
 import { UserTier } from 'types/search/UserTier';
+
 import NoTierData from './NoTierData';
+import * as S from './styled';
 
 const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
   const Tier = ({ tier }: { tier: string }) => {

@@ -1,3 +1,3 @@
-import { getGameVersion, getUserInfo, getUserTier, getUserGameRecord } from './get';
+import { getGameVersion, getUserGameRecord, getUserInfo, getUserTier } from './get';
 
 export { getGameVersion, getUserInfo, getUserTier, getUserGameRecord };

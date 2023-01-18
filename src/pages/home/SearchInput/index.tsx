@@ -1,5 +1,6 @@
-import { getGameVersion, getUserInfo } from 'api/search';
 import { useEffect, useState } from 'react';
+
+import { getGameVersion, getUserInfo } from 'api/search';
 import { useNavigate } from 'react-router-dom';
 
 import * as S from './styled';
@@ -15,7 +16,7 @@ const SearchInput = () => {
 
   return (
     <S.InputContainer>
-      <S.SearchInput placeholder="소환사명 검색" enterButton=". GG" onSearch={onSearch} />
+      <S.SearchInput placeholder='소환사명 검색' enterButton='. GG' onSearch={onSearch} />
     </S.InputContainer>
   );
 };

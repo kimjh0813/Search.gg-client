@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+
 import { Button } from 'antd';
 import { getGameVersion, getUserTier } from 'api/search';
 import TierInfo from 'components/TierInfo';
-
 import type { UserInfo, UserTier } from 'types/search/UserTier';
+
 import * as S from './styled';
 
 const UserProfile = ({ userInfo }: { userInfo: UserInfo | undefined }) => {

@@ -1,14 +1,14 @@
-import { Button, Checkbox, Input, message, Modal } from 'antd';
 import { ChangeEvent, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { closeModal } from 'reduce/modals';
 
 import {
+  ExclamationCircleOutlined,
   LockOutlined,
   SmileOutlined,
   UserOutlined,
-  ExclamationCircleOutlined,
 } from '@ant-design/icons';
+import { Button, Checkbox, Input, Modal, message } from 'antd';
+import { useDispatch } from 'react-redux';
+import { closeModal } from 'reduce/modals';
 
 import * as S from './styled';
 import type * as T from './type';
