@@ -1,10 +1,18 @@
+import apiRequest from 'api/apiRequest';
+
 const apiKey = process.env.REACT_APP_RIOT_API_KEY;
 
 const getGameVersion = async () => {
-  const versionUrl = 'https://ddragon.leagueoflegends.com/api/versions.json';
-  return await fetch(versionUrl)
-    .then(response => response.json())
-    .catch(error => console.log(error));
+  const response = await apiRequest<any>({
+    url: 'https://ddragon.leagueoflegends.com/api/versions.json',
+    method: 'get',
+  });
+
+  return response;
+  // const versionUrl = 'https://ddragon.leagueoflegends.com/api/versions.json';
+  // return await fetch(versionUrl)
+  //   .then(response => response.json())
+  //   .catch(error => console.log(error));
 };
 
 const getUserInfo = async (userName: string) => {

@@ -12,7 +12,9 @@ const UserProfile = ({ userInfo }: { userInfo: UserInfo | undefined }) => {
   const [userTier, setUserTier] = useState<UserTier[]>();
 
   useEffect(() => {
-    getGameVersion().then(result => setVersion(result[0]));
+    getGameVersion().then(({ data }) => {
+      setVersion(data[0]);
+    });
   }, []);
 
   useEffect(() => {
