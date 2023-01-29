@@ -8,6 +8,8 @@ interface apiRequestProps {
   params?: any;
 }
 
+const baseUrl = process.env.REACT_APP_RIOT_API_KEY;
+
 const apiRequest = async <T = any>({
   url,
   method,
@@ -16,7 +18,7 @@ const apiRequest = async <T = any>({
   params,
 }: apiRequestProps): Promise<T> => {
   return await axios({
-    url,
+    url: baseUrl + url,
     method,
     data,
     params,

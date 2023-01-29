@@ -9,10 +9,6 @@ const getGameVersion = async () => {
   });
 
   return response;
-  // const versionUrl = 'https://ddragon.leagueoflegends.com/api/versions.json';
-  // return await fetch(versionUrl)
-  //   .then(response => response.json())
-  //   .catch(error => console.log(error));
 };
 
 const getUserInfo = async (userName: string) => {
