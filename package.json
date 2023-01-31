@@ -62,5 +62,6 @@
     "prettier": "2.8.3"
   },
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "proxy": "http://localhost:3001"
 }
