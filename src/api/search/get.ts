@@ -3,12 +3,17 @@ import apiRequest from 'api/apiRequest';
 const apiKey = process.env.REACT_APP_RIOT_API_KEY;
 
 const getGameVersion = async () => {
-  const response = await apiRequest<any>({
-    url: 'https://ddragon.leagueoflegends.com/api/versions.json',
-    method: 'get',
-  });
+  try {
+    const response = await apiRequest<any>({
+      url: '/api/lol/version',
+      method: 'get',
+    });
+    if (!response) return;
 
-  return response;
+    return response.data;
+  } catch (error: any) {
+    return error;
+  }
 };
 
 const getUserInfo = async (userName: string) => {

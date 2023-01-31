@@ -12,15 +12,22 @@ const UserProfile = ({ userInfo }: { userInfo: UserInfo | undefined }) => {
   const [userTier, setUserTier] = useState<UserTier[]>();
 
   useEffect(() => {
-    getGameVersion().then(({ data }) => {
-      setVersion(data[0]);
-    });
+    getVersion();
   }, []);
 
   useEffect(() => {
     if (!userInfo?.id) return;
     getUserTier(userInfo?.id).then(result => setUserTier(result));
   }, [userInfo?.id]);
+
+  const getVersion = async () => {
+    const response = await getGameVersion();
+
+    if (!response) return;
+
+    setVersion(response[0]);
+  };
+
   return (
     <S.Container className='flex-col mlg:flex-row mlg:justify-between '>
       <S.Box className='px-4 py-6 xsm:px-8'>
