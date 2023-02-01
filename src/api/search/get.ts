@@ -17,19 +17,31 @@ const getGameVersion = async () => {
 };
 
 const getUserInfo = async (userName: string) => {
-  const url = `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${userName}?api_key=${apiKey}`;
+  try {
+    const response = await apiRequest<any>({
+      url: `/api/lol/info/${userName}`,
+      method: 'get',
+    });
+    if (!response) return;
 
-  return await fetch(url)
-    .then(response => response.json())
-    .catch(error => console.log(error));
+    return response.data;
+  } catch (error: any) {
+    return error;
+  }
 };
 
 const getUserTier = async (encryptedSummonerId: string) => {
-  const url = `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${encryptedSummonerId}?api_key=${apiKey}`;
+  try {
+    const response = await apiRequest<any>({
+      url: `/api/lol/tier/${encryptedSummonerId}`,
+      method: 'get',
+    });
+    if (!response) return;
 
-  return await fetch(url)
-    .then(response => response.json())
-    .catch(error => console.log(error));
+    return response.data;
+  } catch (error: any) {
+    return error;
+  }
 };
 
 interface GameRecordProps {

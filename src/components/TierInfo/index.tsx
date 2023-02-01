@@ -68,7 +68,6 @@ const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
             </S.Container>
           );
         })}
-      <NoTierData />
     </div>
   );
 };

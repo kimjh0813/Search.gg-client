@@ -10,9 +10,16 @@ const Search = () => {
   const [userInfo, setUserInfo] = useState<UserInfo>();
 
   useEffect(() => {
-    const userName = window.location.pathname.replaceAll('/search/', '');
-    getUserInfo(userName).then(result => setUserInfo(result));
+    getInfo();
   }, []);
+
+  const getInfo = async () => {
+    const userName = window.location.pathname.replaceAll('/search/', '');
+    const response = await getUserInfo(userName);
+
+    if (!response) return;
+    setUserInfo(response);
+  };
 
   return (
     <div className='max-w-page-full m-auto px-4'>

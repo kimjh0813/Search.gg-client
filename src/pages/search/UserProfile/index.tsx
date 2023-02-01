@@ -16,9 +16,8 @@ const UserProfile = ({ userInfo }: { userInfo: UserInfo | undefined }) => {
   }, []);
 
   useEffect(() => {
-    if (!userInfo?.id) return;
-    getUserTier(userInfo?.id).then(result => setUserTier(result));
-  }, [userInfo?.id]);
+    getTier();
+  }, [userInfo]);
 
   const getVersion = async () => {
     const response = await getGameVersion();
@@ -26,6 +25,14 @@ const UserProfile = ({ userInfo }: { userInfo: UserInfo | undefined }) => {
     if (!response) return;
 
     setVersion(response[0]);
+  };
+
+  const getTier = async () => {
+    if (!userInfo) return;
+    const response = await getUserTier(userInfo.id);
+
+    if (!response) return;
+    setUserTier(response);
   };
 
   return (
