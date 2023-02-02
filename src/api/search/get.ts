@@ -1,4 +1,5 @@
 import apiRequest from 'api/apiRequest';
+import { UserInfo } from 'types/search/UserTier';
 
 const apiKey = process.env.REACT_APP_RIOT_API_KEY;
 
@@ -18,13 +19,12 @@ const getGameVersion = async () => {
 
 const getUserInfo = async (userName: string) => {
   try {
-    const response = await apiRequest<any>({
+    const response = await apiRequest<UserInfo>({
       url: `/api/lol/info/${userName}`,
       method: 'get',
-    });
-    if (!response) return;
+    }).then(({ data }) => data);
 
-    return response.data;
+    return response;
   } catch (error: any) {
     return error;
   }

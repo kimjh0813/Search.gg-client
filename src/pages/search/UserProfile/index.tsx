@@ -7,7 +7,7 @@ import type { UserInfo, UserTier } from 'types/search/UserTier';
 
 import * as S from './styled';
 
-const UserProfile = ({ userInfo }: { userInfo: UserInfo | undefined }) => {
+const UserProfile = ({ userInfo }: { userInfo: UserInfo }) => {
   const [version, setVersion] = useState<string>();
   const [userTier, setUserTier] = useState<UserTier[]>();
 
@@ -28,7 +28,7 @@ const UserProfile = ({ userInfo }: { userInfo: UserInfo | undefined }) => {
   };
 
   const getTier = async () => {
-    if (!userInfo) return;
+    if (!userInfo.id) return;
     const response = await getUserTier(userInfo.id);
 
     if (!response) return;
@@ -36,7 +36,7 @@ const UserProfile = ({ userInfo }: { userInfo: UserInfo | undefined }) => {
   };
 
   return (
-    <S.Container className='flex-col mlg:flex-row mlg:justify-between '>
+    <S.Container className='flex-col min-h-[262px] mlg:flex-row mlg:justify-between '>
       <S.Box className='px-4 py-6 xsm:px-8'>
         <S.ProfileBox>
           <img

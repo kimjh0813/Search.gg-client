@@ -9,14 +9,13 @@ const UserGameRecord = ({ userInfo }: { userInfo: UserInfo | undefined }) => {
   }, [userInfo?.puuid]);
 
   const getGameRecord = async () => {
-    if (!userInfo?.puuid) return;
-
-    const result = await getUserGameRecord({
-      puuid: userInfo?.puuid,
-      type: 'normal',
-      count: 40,
-    });
-    console.log(result);
+    // if (!userInfo?.puuid) return;
+    // const result = await getUserGameRecord({
+    //   puuid: userInfo?.puuid,
+    //   type: 'normal',
+    //   count: 40,
+    // });
+    // console.log(result);
   };
 
   return <div></div>;
