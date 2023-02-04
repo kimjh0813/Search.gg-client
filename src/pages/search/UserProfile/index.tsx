@@ -24,7 +24,7 @@ const UserProfile = ({ userInfo }: { userInfo: UserInfo }) => {
 
     if (!response) return;
 
-    setVersion(response[0]);
+    setVersion(response);
   };
 
   const getTier = async () => {

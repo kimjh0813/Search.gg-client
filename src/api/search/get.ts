@@ -3,9 +3,25 @@ import { UserInfo } from 'types/search/UserTier';
 
 const apiKey = process.env.REACT_APP_RIOT_API_KEY;
 
+interface TierInfo {
+  leagueId?: string;
+  queueType: string;
+  tier: string;
+  rank?: string;
+  summonerId?: string;
+  summonerName?: string;
+  leaguePoints?: number;
+  wins?: number;
+  losses?: number;
+  veteran?: boolean;
+  inactive?: boolean;
+  freshBlood?: boolean;
+  hotStreak?: boolean;
+}
+
 const getGameVersion = async () => {
   try {
-    const response = await apiRequest<any>({
+    const response = await apiRequest<string[]>({
       url: '/api/lol/version',
       method: 'get',
     });
@@ -32,7 +48,7 @@ const getUserInfo = async (userName: string) => {
 
 const getUserTier = async (encryptedSummonerId: string) => {
   try {
-    const response = await apiRequest<any>({
+    const response = await apiRequest<TierInfo[]>({
       url: `/api/lol/tier/${encryptedSummonerId}`,
       method: 'get',
     });
