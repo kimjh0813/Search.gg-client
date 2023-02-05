@@ -70,41 +70,4 @@ interface GameRecordProps {
   count?: number;
 }
 
-const getUserGameRecord = async ({
-  puuid,
-  startTime,
-  endTime,
-  queue,
-  type,
-  start = 1,
-  count = 20,
-}: GameRecordProps) => {
-  console.log({ puuid, startTime, endTime, queue, type, start, count });
-  const setQuery = () => {
-    let query: string = '';
-    if (startTime) {
-      query = query + 'startTime=' + startTime + '&';
-    }
-    if (endTime) {
-      query = query + 'endTime=' + endTime + '&';
-    }
-    if (queue) {
-      query = query + 'queue=' + queue + '&';
-    }
-    if (type) {
-      query = query + 'type=' + type + '&';
-    }
-    query = query + 'start=' + start + '&';
-    query = query + 'count=' + count + '&';
-
-    return query;
-  };
-
-  const url = `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?${setQuery()}api_key=${apiKey}`;
-
-  return await fetch(url)
-    .then(response => response.json())
-    .catch(error => console.log(error));
-};
-
-export { getGameVersion, getUserInfo, getUserTier, getUserGameRecord };
+export { getGameVersion, getUserInfo, getUserTier };
