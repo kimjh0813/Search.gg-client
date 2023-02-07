@@ -42,8 +42,10 @@ const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
   return (
     <div className='flex flex-col justify-between w-full xsm:flex-row'>
       {userInfo &&
-        userInfo.map((v, index) => {
-          return (
+        userInfo.map((v, index) =>
+          v.tier === 'UnRanked' ? (
+            <NoTierData queueType={v.queueType} />
+          ) : (
             <S.Container key={index} className='w-full xsm:w-1/2 xsm:mx-2'>
               <S.TierInfoWrapper className='w-full mlg:w-[250px]'>
                 <S.TierTitle>
@@ -66,8 +68,8 @@ const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
                 </S.WInLossBox>
               </S.TierInfoWrapper>
             </S.Container>
-          );
-        })}
+          ),
+        )}
     </div>
   );
 };

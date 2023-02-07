@@ -1,5 +1,5 @@
 interface NoTierDataProps {
-  queueType?: string;
+  queueType: string;
 }
 
 export type { NoTierDataProps };

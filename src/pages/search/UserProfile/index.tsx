@@ -39,10 +39,14 @@ const UserProfile = ({ userInfo }: { userInfo: UserInfo }) => {
     <S.Container className='flex-col min-h-[262px] mlg:flex-row mlg:justify-between '>
       <S.Box className='px-4 py-6 xsm:px-8'>
         <S.ProfileBox>
-          <img
-            src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${userInfo?.profileIconId}.png`}
-          />
-          <span>{userInfo?.summonerLevel}</span>
+          {version && userInfo && (
+            <>
+              <img
+                src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${userInfo?.profileIconId}.png`}
+              />
+              <span>{userInfo?.summonerLevel}</span>
+            </>
+          )}
         </S.ProfileBox>
         <S.InfoBox>
           <S.NameBox>{userInfo?.name}</S.NameBox>
