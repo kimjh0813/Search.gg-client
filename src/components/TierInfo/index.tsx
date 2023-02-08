@@ -1,44 +1,10 @@
-import BronzeImage from 'assets/images/bronze.png';
-import ChallengerImage from 'assets/images/challenger.png';
-import DiamondImage from 'assets/images/diamond.png';
-import GoldImage from 'assets/images/gold.png';
-import GrandMasterImage from 'assets/images/grandMaster.png';
-import IronImage from 'assets/images/iron.png';
-import MasterImage from 'assets/images/master.png';
-import PlatinumImage from 'assets/images/platinum.png';
-import SilverImage from 'assets/images/silver.png';
-import UnRankedImage from 'assets/images/unRanked.png';
 import { UserTier } from 'types/search/UserTier';
 
 import NoTierData from './NoTierData';
+import TierImage from './TierImage';
 import * as S from './styled';
 
 const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
-  const Tier = ({ tier }: { tier: string }) => {
-    switch (tier) {
-      case 'CHALLENGER':
-        return <img src={ChallengerImage}></img>;
-      case 'GRANDMASTER':
-        return <img src={GrandMasterImage}></img>;
-      case 'MASTER':
-        return <img src={MasterImage}></img>;
-      case 'DIAMOND':
-        return <img src={DiamondImage}></img>;
-      case 'PLATINUM':
-        return <img src={PlatinumImage}></img>;
-      case 'GOLD':
-        return <img src={GoldImage}></img>;
-      case 'SILVER':
-        return <img src={SilverImage}></img>;
-      case 'BRONZE':
-        return <img src={BronzeImage}></img>;
-      case 'IRON':
-        return <img src={IronImage}></img>;
-      default:
-        return <img src={UnRankedImage}></img>;
-    }
-  };
-
   return (
     <div className='flex flex-col justify-between w-full xsm:flex-row'>
       {userInfo &&
@@ -52,7 +18,7 @@ const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
                   {v.queueType === 'RANKED_SOLO_5x5' ? '솔로랭크 5x5' : '자유랭크 5x5'}
                 </S.TierTitle>
                 <S.TierInfoBox>
-                  <Tier tier={v.tier} />
+                  <TierImage tier={v.tier} />
                   <S.TierTextBox>
                     <div className='tier_info'>{v.tier + ' ' + v.rank}</div>
                     <div className='tier_info'>{v.leaguePoints} LP</div>
