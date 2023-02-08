@@ -1,11 +1,14 @@
-import { Fragment, Suspense } from 'react';
+import { Fragment, Suspense, lazy } from 'react';
 
-import LoginModal from 'components/Modal/LoginModal';
-import SignUpModal from 'components/Modal/SignUpModal';
 import { useSelector } from 'react-redux';
 import { RootState } from 'reduce';
 
-function ModalManager() {
+const MODALS = {
+  LoginModal: lazy(() => import('components/Modal/LoginModal')),
+  SignUpModal: lazy(() => import('components/Modal/SignUpModal')),
+};
+
+const ModalManager = () => {
   const { openedModals } = useSelector((state: RootState) => state.modals);
 
   return (
@@ -16,10 +19,10 @@ function ModalManager() {
             {(() => {
               switch (name) {
                 case 'LoginModal': {
-                  return <LoginModal />;
+                  return <MODALS.LoginModal />;
                 }
                 case 'SignUpModal': {
-                  return <SignUpModal />;
+                  return <MODALS.SignUpModal />;
                 }
                 default: {
                   return <></>;
@@ -31,6 +34,6 @@ function ModalManager() {
       })}
     </Suspense>
   );
-}
+};
 
 export default ModalManager;

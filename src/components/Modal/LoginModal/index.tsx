@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Input, Modal } from 'antd';
+import { Button, Checkbox, Input } from 'antd';
 import { useDispatch } from 'react-redux';
 import { closeModal, openModal } from 'reduce/modals';
 

@@ -6,7 +6,7 @@ import {
   SmileOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { Button, Checkbox, Input, Modal, message } from 'antd';
+import { Button, Input, message } from 'antd';
 import { useDispatch } from 'react-redux';
 import { closeModal } from 'reduce/modals';
 
