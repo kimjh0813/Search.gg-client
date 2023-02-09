@@ -1,7 +1,5 @@
 import apiRequest from 'api/apiRequest';
-import { TierInfo, UserInfo } from 'types/search/UserTier';
-
-const apiKey = process.env.REACT_APP_RIOT_API_KEY;
+import type { TierInfo, UserInfo } from 'types/search';
 
 const getGameVersion = async () => {
   try {

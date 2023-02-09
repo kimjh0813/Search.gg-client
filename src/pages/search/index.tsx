@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { getUserInfo } from 'api/search';
 import { useLocation } from 'react-router-dom';
-import type { UserInfo } from 'types/search/UserTier';
+import type { UserInfo } from 'types/search';
 
 import UserGameRecord from './UserGameRecord';
 import UserProfile from './UserProfile';

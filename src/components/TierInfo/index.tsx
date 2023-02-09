@@ -1,14 +1,21 @@
-import { UserTier } from 'types/search/UserTier';
+import type { TierInfo } from 'types/search';
 
 import NoTierData from './NoTierData';
 import TierImage from './TierImage';
 import * as S from './styled';
 
-const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
+const UserTier = ({ tierInfo }: { tierInfo: TierInfo[] | undefined }) => {
+  const convertWinRate = (wins?: number, losses?: number) => {
+    if (!wins || !losses) return 'noData';
+    const winRate = ((wins / (wins + losses)) * 100).toFixed(1) + '%';
+
+    return winRate;
+  };
+
   return (
     <div className='flex flex-col justify-between w-full xsm:flex-row'>
-      {userInfo &&
-        userInfo.map((v, index) =>
+      {tierInfo &&
+        tierInfo.map((v, index) =>
           v.tier === 'UnRanked' ? (
             <NoTierData queueType={v.queueType} />
           ) : (
@@ -30,7 +37,7 @@ const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
                     <span style={{ color: '#5393CA', marginRight: 8 }}> 승</span> {v.losses}
                     <span style={{ color: '#ED6767' }}> 패</span>
                   </div>
-                  <div>승률: {((v.wins / (v.wins + v.losses)) * 100).toFixed(1)}%</div>
+                  <div>승률: {convertWinRate(v.wins, v.losses)}</div>
                 </S.WInLossBox>
               </S.TierInfoWrapper>
             </S.Container>
@@ -40,4 +47,4 @@ const TierInfo = ({ userInfo }: { userInfo: UserTier[] | undefined }) => {
   );
 };
 
-export default TierInfo;
+export default UserTier;

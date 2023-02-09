@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { Button } from 'antd';
 import { getGameVersion, getUserTier } from 'api/search';
-import TierInfo from 'components/TierInfo';
-import type { UserInfo, UserTier } from 'types/search/UserTier';
+import UserTier from 'components/TierInfo';
+import type { TierInfo, UserInfo } from 'types/search';
 
 import * as S from './styled';
 
 const UserProfile = ({ userInfo }: { userInfo: UserInfo }) => {
   const [version, setVersion] = useState<string>();
-  const [userTier, setUserTier] = useState<UserTier[]>();
+  const [tierInfo, setTierInfo] = useState<TierInfo[]>();
 
   useEffect(() => {
     getVersion();
@@ -32,7 +32,7 @@ const UserProfile = ({ userInfo }: { userInfo: UserInfo }) => {
     const response = await getUserTier(userInfo.id);
 
     if (!response) return;
-    setUserTier(response);
+    setTierInfo(response);
   };
 
   return (
@@ -56,7 +56,7 @@ const UserProfile = ({ userInfo }: { userInfo: UserInfo }) => {
         </S.InfoBox>
       </S.Box>
       <S.Box className='px-4 py-6 mgl:px-6'>
-        <TierInfo userInfo={userTier} />
+        <UserTier tierInfo={tierInfo} />
       </S.Box>
     </S.Container>
   );
