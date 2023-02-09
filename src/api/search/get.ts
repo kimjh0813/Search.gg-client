@@ -1,23 +1,7 @@
 import apiRequest from 'api/apiRequest';
-import { UserInfo } from 'types/search/UserTier';
+import { TierInfo, UserInfo } from 'types/search/UserTier';
 
 const apiKey = process.env.REACT_APP_RIOT_API_KEY;
-
-interface TierInfo {
-  leagueId?: string;
-  queueType: string;
-  tier: string;
-  rank?: string;
-  summonerId?: string;
-  summonerName?: string;
-  leaguePoints?: number;
-  wins?: number;
-  losses?: number;
-  veteran?: boolean;
-  inactive?: boolean;
-  freshBlood?: boolean;
-  hotStreak?: boolean;
-}
 
 const getGameVersion = async () => {
   try {
@@ -59,15 +43,5 @@ const getUserTier = async (encryptedSummonerId: string) => {
     return error;
   }
 };
-
-interface GameRecordProps {
-  puuid: string;
-  startTime?: number;
-  endTime?: number;
-  queue?: number;
-  type?: 'ranked' | 'normal' | 'tourney' | 'tutorial';
-  start?: number;
-  count?: number;
-}
 
 export { getGameVersion, getUserInfo, getUserTier };
