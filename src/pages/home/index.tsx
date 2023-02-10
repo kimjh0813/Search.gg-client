@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <S.HomeContainer>
       <S.HomeSubContainer>
-        <Logo className={'max-w-[500px] flex w-full m-auto py-16 px-6'} />
+        <Logo className={'max-w-[500px] w-full m-auto py-16 px-6'} />
         <SearchUser />
         <HomeContent />
       </S.HomeSubContainer>

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   width: 100%;
+  min-height: 262px;
   height: auto;
   background-color: #eee;
   border: 1px solid #ddd;

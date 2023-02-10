@@ -6,6 +6,7 @@ import type { UserInfo } from 'types/search';
 
 import UserGameRecord from './UserGameRecord';
 import UserProfile from './UserProfile';
+import * as S from './styled';
 
 const Search = () => {
   const location = useLocation();
@@ -25,10 +26,10 @@ const Search = () => {
   };
 
   return (
-    <div className='max-w-page-full m-auto px-4 '>
+    <S.Container>
       <UserProfile userInfo={userInfo} />
       <UserGameRecord userInfo={userInfo} />
-    </div>
+    </S.Container>
   );
 };
 

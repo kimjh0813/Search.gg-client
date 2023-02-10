@@ -36,7 +36,7 @@ const UserProfile = ({ userInfo }: { userInfo: UserInfo }) => {
   };
 
   return (
-    <S.Container className='flex-col min-h-[262px] mlg:flex-row mlg:justify-between '>
+    <S.Container className='flex-col mlg:flex-row mlg:justify-between '>
       <S.Box className='px-4 py-6 xsm:px-8'>
         <S.ProfileBox>
           {version && userInfo && (

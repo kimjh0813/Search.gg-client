@@ -107,7 +107,7 @@ const SignUpModal = () => {
             prefix={<SmileOutlined />}
           />
         </S.ItemBox>
-        <S.ItemBox style={{ marginTop: 30 }}>
+        <S.ItemBox className='mt-6'>
           <Button type='primary' onClick={signUp}>
             가입하기
           </Button>
