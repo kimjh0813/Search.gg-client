@@ -3,29 +3,19 @@ import { useEffect, useState } from 'react';
 import { Button } from 'antd';
 import { getGameVersion, getUserTier } from 'api/search';
 import UserTier from 'components/TierInfo';
+import { useGetVersion } from 'hooks/query';
 import type { TierInfo, UserInfo } from 'types/search';
 
 import * as S from './styled';
 
 const UserProfile = ({ userInfo }: { userInfo: UserInfo }) => {
-  const [version, setVersion] = useState<string>();
-  const [tierInfo, setTierInfo] = useState<TierInfo[]>();
+  const [{ data: version }] = useGetVersion();
 
-  useEffect(() => {
-    getVersion();
-  }, []);
+  const [tierInfo, setTierInfo] = useState<TierInfo[]>();
 
   useEffect(() => {
     getTier();
   }, [userInfo]);
-
-  const getVersion = async () => {
-    const response = await getGameVersion();
-
-    if (!response) return;
-
-    setVersion(response);
-  };
 
   const getTier = async () => {
     if (!userInfo.id) return;
