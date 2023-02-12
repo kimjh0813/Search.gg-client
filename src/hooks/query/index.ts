@@ -1,3 +1,4 @@
-import useGetVersion from './useGetVersion';
+import useGetVersion from './GameVersion/useGetVersion';
+import useGetUserInfo from './UserInfo/useGetUserInfo';
 
-export { useGetVersion };
+export { useGetVersion, useGetUserInfo };
