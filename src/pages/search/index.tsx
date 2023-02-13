@@ -14,8 +14,12 @@ const Search = () => {
 
   return (
     <S.Container>
-      <UserProfile userInfo={userInfo} />
-      <UserGameRecord userInfo={userInfo} />
+      {userInfo && (
+        <>
+          <UserProfile userInfo={userInfo} />
+          <UserGameRecord userInfo={userInfo} />
+        </>
+      )}
     </S.Container>
   );
 };

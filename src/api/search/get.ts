@@ -20,9 +20,9 @@ const getUserInfo = async (userName: string) => {
     const response = await apiRequest<UserInfo>({
       url: `/api/lol/info/${userName}`,
       method: 'get',
-    }).then(({ data }) => data);
+    });
 
-    return response;
+    return response.data;
   } catch (error: any) {
     return error;
   }
