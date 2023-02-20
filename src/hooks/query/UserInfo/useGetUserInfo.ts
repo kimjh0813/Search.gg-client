@@ -8,11 +8,11 @@ interface UserInfoProps {
   userName: string;
 }
 
-const useGetUserInfo = ({ userName }: UserInfoProps) => {
-  const response = useQuery(['USER_INFO'], async () => {
-    if (!userName) return;
+const useGetUserInfo = (props: UserInfoProps) => {
+  const response = useQuery(['USER_INFO', props.userName], async () => {
+    if (!props.userName) return;
 
-    const response = await getUserInfo(userName);
+    const response = await getUserInfo(props.userName);
 
     return response;
   });

@@ -8,7 +8,14 @@ const SearchInput = () => {
   const onSearch = (value: string) => {
     if (!value) return;
 
-    navigate(`/search/${value}`);
+    let userName: string;
+    if (value.length === 2) {
+      const splitValue = value.split('');
+      userName = `${splitValue[0]} ${splitValue[1]}`;
+    } else {
+      userName = value;
+    }
+    navigate(`/search/${userName}`);
   };
 
   return (
