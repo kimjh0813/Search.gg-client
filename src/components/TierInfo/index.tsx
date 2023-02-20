@@ -17,7 +17,7 @@ const UserTier = ({ tierInfo }: { tierInfo: TierInfo[] | undefined }) => {
       {tierInfo &&
         tierInfo.map((v, index) =>
           v.tier === 'UnRanked' ? (
-            <NoTierData queueType={v.queueType} />
+            <NoTierData key={index} queueType={v.queueType} />
           ) : (
             <S.Container key={index} className='w-full xsm:w-1/2 xsm:mx-2'>
               <S.TierInfoWrapper className='w-full mlg:w-[250px]'>

@@ -10,6 +10,8 @@ interface UserInfoProps {
 
 const useGetUserInfo = ({ userName }: UserInfoProps) => {
   const response = useQuery(['USER_INFO'], async () => {
+    if (!userName) return;
+
     const response = await getUserInfo(userName);
 
     return response;

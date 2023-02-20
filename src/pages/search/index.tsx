@@ -1,15 +1,17 @@
+import { useEffect } from 'react';
+
 import { useGetUserInfo } from 'hooks/query';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import UserGameRecord from './UserGameRecord';
 import UserProfile from './UserProfile';
 import * as S from './styled';
 
 const Search = () => {
-  const location = useLocation();
+  const { name } = useParams<{ name: string }>();
 
   const [{ data: userInfo }] = useGetUserInfo({
-    userName: location.pathname.replaceAll('/search/', ''),
+    userName: name || '',
   });
 
   return (
