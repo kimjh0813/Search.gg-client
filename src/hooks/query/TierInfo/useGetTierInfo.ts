@@ -9,7 +9,7 @@ interface UserTierProps {
 }
 
 const useGetTierInfo = ({ userId }: UserTierProps) => {
-  const response = useQuery(['USER_TIER'], async () => {
+  const response = useQuery(['USER_TIER', userId], async () => {
     const response = await getUserTier(userId);
 
     return response;
